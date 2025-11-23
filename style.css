@@ -1,0 +1,278 @@
+/* ===== Global Styles ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 20px;
+}
+
+/* ===== App Layout ===== */
+.app-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #020617;
+    border-radius: 16px;
+    padding: 24px 18px 28px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.app-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #e5e7eb;
+}
+
+.app-subtitle {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+/* ===== Sections ===== */
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #e5e7eb;
+}
+
+.add-task-section,
+.task-list-section,
+.edit-task-section {
+    margin-bottom: 22px;
+    padding: 14px 14px 16px;
+    border-radius: 12px;
+    background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 55%),
+                radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.15), transparent 55%),
+                #020617;
+    border: 1px solid rgba(51, 65, 85, 0.9);
+}
+
+/* ===== Form ===== */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: #cbd5f5;
+}
+
+.input,
+.textarea,
+select.input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #1f2937;
+    background: rgba(15, 23, 42, 0.95);
+    color: #e5e7eb;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.input:focus,
+.textarea:focus,
+select.input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35);
+    background: rgba(15, 23, 42, 1);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #38bdf8, #6366f1);
+    color: #0b1120;
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 26px rgba(56, 189, 248, 0.35);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #e5e7eb;
+    border-color: rgba(148, 163, 184, 0.5);
+}
+
+.btn-secondary:hover {
+    background: rgba(15, 23, 42, 0.9);
+    transform: translateY(-1px);
+}
+
+.btn-small {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+}
+
+.btn-edit {
+    background: rgba(59, 130, 246, 0.1);
+    color: #bfdbfe;
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.btn-edit:hover {
+    background: rgba(59, 130, 246, 0.25);
+}
+
+.btn-delete {
+    background: rgba(248, 113, 113, 0.08);
+    color: #fecaca;
+    border-color: rgba(248, 113, 113, 0.5);
+}
+
+.btn-delete:hover {
+    background: rgba(248, 113, 113, 0.2);
+}
+
+/* ===== Table ===== */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+    font-size: 0.85rem;
+}
+
+.task-table thead {
+    background: rgba(15, 23, 42, 0.95);
+}
+
+.task-table th,
+.task-table td {
+    border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.task-table th {
+    font-weight: 600;
+    color: #cbd5f5;
+}
+
+.task-table tbody tr:nth-child(even) {
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.task-table tbody tr:hover {
+    background: rgba(30, 64, 175, 0.35);
+}
+
+/* ===== Status Badges ===== */
+.status-cell {
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.status-pending {
+    color: #f97316;
+    background: rgba(248, 171, 95, 0.08);
+    padding: 4px 8px;
+    border-radius: 999px;
+    display: inline-block;
+}
+
+.status-completed {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.08);
+    padding: 4px 8px;
+    border-radius: 999px;
+    display: inline-block;
+}
+
+/* ===== Misc ===== */
+td .btn {
+    margin-right: 4px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .app-container {
+        padding: 16px 12px 20px;
+        border-radius: 14px;
+    }
+
+    .app-title {
+        font-size: 1.6rem;
+    }
+
+    .add-task-section,
+    .task-list-section,
+    .edit-task-section {
+        padding: 10px 10px 12px;
+    }
+
+    .task-table {
+        font-size: 0.78rem;
+        min-width: 550px;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-table {
+        min-width: 480px;
+    }
+
+    .btn {
+        padding: 6px 10px;
+    }
+
+    .btn-small {
+        padding: 4px 8px;
+    }
+}
